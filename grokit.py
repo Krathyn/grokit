@@ -2,7 +2,6 @@ import sys
 
 from pyngrok import conf,ngrok
 
-from PyQt5 import QtGui
 from PyQt5.QtWidgets import (
   QApplication,
   QLabel,
@@ -109,11 +108,12 @@ class Window(QMainWindow):
         self.layout.addWidget(self.tunnelName,4,0,1,3)
         return
 
-    
-
-
-if __name__ == "__main__":
+def main():
     app = QApplication(sys.argv)
     win = Window()
     win.show()
     sys.exit(app.exec_())
+
+
+if __name__ == "__main__":
+    main()
