@@ -50,7 +50,7 @@ class Window(QMainWindow):
     def __init__(self, parent=None):
         super().__init__(parent)
 
-        self.setWindowTitle("Grok it: v0.3")
+        self.setWindowTitle("Grok it: v1.0")
         self.resize(400,100)
         self.centralWidget = QWidget()
         self.setCentralWidget(self.centralWidget)
