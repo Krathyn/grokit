@@ -1,2 +1,20 @@
 
 .DS_Store
+dist/grokit.app/Contents/Resources/icon-windowed.icns
+dist/grokit
+dist/grokit.app/Contents/Info.plist
+dist/grokit.app/Contents/MacOS/grokit
+build/grokit/xref-grokit.html
+build/grokit/warn-grokit.txt
+build/grokit/Tree-02.toc
+build/grokit/Tree-01.toc
+__pycache__/grokit.cpython-39.pyc
+build/grokit/Analysis-00.toc
+build/grokit/base_library.zip
+build/grokit/BUNDLE-00.toc
+build/grokit/EXE-00.toc
+build/grokit/PKG-00.pkg
+build/grokit/PKG-00.toc
+build/grokit/PYZ-00.pyz
+build/grokit/PYZ-00.toc
+build/grokit/Tree-00.toc
