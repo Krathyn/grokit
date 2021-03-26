@@ -1,4 +1,5 @@
 import sys
+import time
 
 from pyngrok import conf,ngrok
 
@@ -62,17 +63,28 @@ class Window(QMainWindow):
         self.ngrok_tunnel = None
 
     def tokenButtonFunction(self):
-        set_token_default(self.authTokenField.text())
-        return
+        try:
+            set_token_default(self.authTokenField.text())
+        except:
+            return
 
     def connectButtonFunction(self):
-        self.ngrok_tunnel = open_tunnel(self.portField.text(),self.ip_addressField.text())
-        self.tunnelName.setText(self.ngrok_tunnel.public_url)
-
+        try:
+            self.ngrok_tunnel = open_tunnel(self.portField.text(),self.ip_addressField.text())
+            self.tunnelName.setText(self.ngrok_tunnel.public_url)
+        except:
+            return
+        
     def disconnectButtonFunction(self):
-        tunnelname = get_tunnel(self.ngrok_tunnel)
-        close_tunnel(tunnelname)
-        self.tunnelName.setText("")
+        try:
+            tunnelname = get_tunnel(self.ngrok_tunnel)
+            close_tunnel(tunnelname)
+            time.sleep(2)
+            ngrok.kill()
+            
+            self.tunnelName.setText("")
+        except:
+            return
 
     def setupUI(self):
 
