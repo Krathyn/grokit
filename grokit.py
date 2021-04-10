@@ -72,6 +72,7 @@ class Window(QMainWindow):
         try:
             self.ngrok_tunnel = open_tunnel(self.portField.text(),self.ip_addressField.text())
             self.tunnelName.setText(self.ngrok_tunnel.public_url)
+            self.connectButton.setDisabled(True)
         except:
             return
         
@@ -81,7 +82,7 @@ class Window(QMainWindow):
             close_tunnel(tunnelname)
             time.sleep(2)
             ngrok.kill()
-            
+            self.connectButton.setDisabled(False)
             self.tunnelName.setText("")
         except:
             return
